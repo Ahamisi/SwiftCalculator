@@ -133,9 +133,24 @@ function initMap() {
     }
     if(distance && selectedValue){
       const rawKm = distance.substring(0, distance.length-3)
+      let totalPrice = (rawKm * selectedValue).toFixed(2);
+      console.log(selectedValue, totalPrice, rawKm)
+      if(totalPrice < 1000 && selectedValue == '90'){
+        totalPrice = 1000
+      }else if(totalPrice > 7000 && selectedValue == '90'){
+        totalPrice = 7000
+      }
+      else if(totalPrice < 700 && selectedValue == '70'){
+        totalPrice = 700
+      }
+      else if(totalPrice < 1500 && selectedValue == '130'){
+        totalPrice = 1500
+      }else if(totalPrice > 8000 && selectedValue == '130'){
+        totalPrice = 8000
+      }
       document.getElementById('detailSummary').innerHTML = `
       <h3>Hi your distance is <span class='summary'>${distance} </span></h3>
-      <h3>Hence Delivery Fee is <span class='summary'> ₦${(rawKm * selectedValue).toFixed(2)}</span></h3>
+      <h3>Hence Delivery Fee is <span class='summary'> ₦${(totalPrice)}</span></h3>
       `;
     }
   }
