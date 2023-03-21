@@ -122,6 +122,75 @@ function initMap() {
   
   window.initMap = initMap;
 
+
+function renderSameDay(amount){
+  if(amount <= 1249) return '1000'
+  else if(amount >= 1250 && amount <= 1749) return '1500'
+  else if(amount >= 1750 && amount <= 2249) return '2000'
+  else if(amount >= 2250 && amount <= 2749) return '2500'
+  else if(amount >= 2750 && amount <= 3249) return '3000'
+  else if(amount >= 3250 && amount <= 3749) return '3500'
+  else if(amount >= 3750 && amount <= 4249) return '4000'
+  else if(amount >= 4250 && amount <= 4749) return '4500'
+  else if(amount >= 4750 && amount <= 5249) return '5000'
+  else if(amount >= 5250 && amount <= 5749) return '5500'
+  else if(amount >= 5750 && amount <= 6249) return '6000'
+  else if(amount >= 6250 && amount <= 6749) return '6500'
+  else if(amount >= 6750 && amount <= 7249) return '7000'
+  else return amount
+
+}
+
+
+function renderInstant(amount){
+  if(amount <= 1749) return '1500'
+  else if(amount >= 1750 && amount <= 2249) return '2000'
+  else if(amount >= 2250 && amount <= 2749) return '2500'
+  else if(amount >= 2750 && amount <= 3249) return '3000'
+  else if(amount >= 3250 && amount <= 3749) return '3500'
+  else if(amount >= 3750 && amount <= 4249) return '4000'
+  else if(amount >= 4250 && amount <= 4749) return '4500'
+  else if(amount >= 4750 && amount <= 5249) return '5000'
+  else if(amount >= 5250 && amount <= 5749) return '5500'
+  else if(amount >= 5750 && amount <= 6249) return '6000'
+  else if(amount >= 6250 && amount <= 6749) return '6500'
+  else if(amount >= 6750 && amount <= 7249) return '7000'
+  else if(amount >= 7250 && amount <= 7749) return '7500'
+  else if(amount >= 7750 && amount <= 8249) return '8000'
+  else return amount
+
+}
+
+
+function renderNextDay(amount){
+  if(amount <= 699) return '700'
+  else if(amount >= 701 && amount <= 799) return '800'
+  else if(amount >= 800 && amount <= 899) return '900'
+  else if(amount >= 900 && amount <= 1249) return '1000'
+  else if(amount >= 1250 && amount <= 1749) return '1500'
+  else if(amount >= 1750 && amount <= 2249) return '2000'
+  else if(amount >= 2250 && amount <= 2749) return '2500'
+  else if(amount >= 2750 && amount <= 3249) return '3000'
+  else if(amount >= 3250 && amount <= 3749) return '3500'
+  else if(amount >= 3750 && amount <= 4249) return '4000'
+  else if(amount >= 4250 && amount <= 4749) return '4500'
+  else if(amount >= 4750 && amount <= 5249) return '5000'
+  else if(amount >= 5250 && amount <= 5749) return '5500'
+  else if(amount >= 5750 && amount <= 6249) return '6000'
+  else if(amount >= 6250 && amount <= 6749) return '6500'
+  else if(amount >= 6750 && amount <= 7249) return '6000'
+  else return amount
+
+}
+
+
+
+
+
+
+
+
+
   function doTheMagic(){
     const selectedValue = document.getElementById('deliverySwitch').value
     console.log(selectedValue,distance)
@@ -148,6 +217,23 @@ function initMap() {
       }else if(totalPrice > 8000 && selectedValue == '130'){
         totalPrice = 8000
       }
+
+
+      if(selectedValue == '90'){
+        totalPrice =  renderSameDay(totalPrice)
+      }else if(selectedValue == '70'){
+        totalPrice =  renderNextDay(totalPrice)
+      }else if(selectedValue == '130'){
+        totalPrice =  renderInstant(totalPrice)
+      }
+
+      console.log(distance, totalPrice, selectedValue)
+
+
+
+
+
+
       document.getElementById('detailSummary').innerHTML = `
       <h3>Hi your distance is <span class='summary'>${distance} </span></h3>
       <h3>Hence Delivery Fee is <span class='summary'> ₦${(totalPrice)}</span></h3>
