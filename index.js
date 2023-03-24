@@ -201,7 +201,7 @@ function renderNextDay(amount){
       window.alert('Kindly Choose a Delivery Type')
     }
     if(distance && selectedValue){
-      const rawKm = distance.substring(0, distance.length-3)
+      const rawKm = distance.substring(0, distance.length-3).replace(',','')
       let totalPrice = (rawKm * selectedValue).toFixed(2);
       console.log(selectedValue, totalPrice, rawKm)
       if(totalPrice < 1000 && selectedValue == '90'){
@@ -227,7 +227,7 @@ function renderNextDay(amount){
         totalPrice =  renderInstant(totalPrice)
       }
 
-      console.log(distance, totalPrice, selectedValue)
+      console.log(distance, totalPrice, selectedValue, rawKm)
 
 
 

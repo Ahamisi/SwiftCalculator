@@ -112,3 +112,11 @@
     width: 100%;
   }
 }
+
+
+#map > div > div > div:nth-child(5){
+  background-color: #62265f !important;
+  padding: 34px 10px;
+  position: relative;
+  width: 100%;
+}

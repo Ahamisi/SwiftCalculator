@@ -56,3 +56,17 @@
     font-size: 13px;
     font-weight: 300;
   }
+
+  .input-div, #input-div{
+    background-color: #62265f;
+    padding: 30px 10px;
+    position: relative;
+    width: 100%;
+  }
+  #map > div > div > div:nth-child(5){
+    background-color: #62265f !important;
+    padding: 30px 10px;
+    position: relative;
+    width: 100%;
+  }
+
