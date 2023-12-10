@@ -127,3 +127,6 @@
   font-size: 16px;
   font-weight: bolder;
 }
+#map > div > div.gm-style > div:nth-child(1){
+  position: relative !important;
+}
