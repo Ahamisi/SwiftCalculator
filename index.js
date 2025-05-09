@@ -219,11 +219,11 @@ function renderNextDay(amount){
       }
 
 
-      if(selectedValue == '160'){
+      if(selectedValue == '300'){
         totalPrice =  renderSameDay(totalPrice)
-      }else if(selectedValue == '130'){
+      }else if(selectedValue == '250'){
         totalPrice =  renderNextDay(totalPrice)
-      }else if(selectedValue == '200'){
+      }else if(selectedValue == '350'){
         totalPrice =  renderInstant(totalPrice)
       }
 
