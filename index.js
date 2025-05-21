@@ -204,26 +204,26 @@ function renderNextDay(amount){
       const rawKm = distance.substring(0, distance.length-3).replace(',','')
       let totalPrice = (rawKm * selectedValue).toFixed(2);
       console.log(selectedValue, totalPrice, rawKm)
-      if(totalPrice < 1000 && selectedValue == '160'){
+      if(totalPrice < 1000 && selectedValue == '200'){
         totalPrice = 1000
-      }else if(totalPrice > 7000 && selectedValue == '160'){
+      }else if(totalPrice > 7000 && selectedValue == '200'){
         totalPrice = 7000
       }
-      else if(totalPrice < 700 && selectedValue == '130'){
+      else if(totalPrice < 700 && selectedValue == '250'){
         totalPrice = 700
       }
-      else if(totalPrice < 1500 && selectedValue == '200'){
+      else if(totalPrice < 1500 && selectedValue == '300'){
         totalPrice = 1500
-      }else if(totalPrice > 8000 && selectedValue == '200'){
+      }else if(totalPrice > 8000 && selectedValue == '300'){
         totalPrice = 8000
       }
 
 
-      if(selectedValue == '300'){
+      if(selectedValue == '250'){
         totalPrice =  renderSameDay(totalPrice)
-      }else if(selectedValue == '250'){
+      }else if(selectedValue == '200'){
         totalPrice =  renderNextDay(totalPrice)
-      }else if(selectedValue == '350'){
+      }else if(selectedValue == '300'){
         totalPrice =  renderInstant(totalPrice)
       }
 
